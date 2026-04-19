@@ -216,7 +216,6 @@ function App() {
                 </div>
                 <div className="product-info">
                   <h4 className="product-title">{product.title}</h4>
-                  <p className="product-price">{product.price}</p>
                 </div>
               </div>
             ))}
