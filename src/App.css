@@ -121,7 +121,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 100%);
   z-index: 2;
 }
 
@@ -170,12 +170,19 @@
   background-color: var(--color-accent);
   color: var(--color-white);
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes heroTextReveal {
-  from { transform: translateY(30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* --- Section Heading --- */
@@ -219,7 +226,7 @@
 
 .product-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
 }
 
 .product-image-wrapper {
@@ -336,7 +343,7 @@
 .category-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.1) 100%);
   transition: background 0.4s ease;
 }
 
@@ -345,7 +352,7 @@
 }
 
 .category-card:hover .category-overlay {
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 100%);
 }
 
 .category-content {
@@ -389,7 +396,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 3rem;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 3rem;
   margin-bottom: 2rem;
 }
@@ -432,7 +439,7 @@
   flex: 1;
   padding: 0.8rem 1rem;
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: var(--color-white);
   font-family: var(--font-body);
   outline: none;
@@ -470,7 +477,10 @@
 
 /* --- Media Queries for Responsiveness (Low Resolution Screens) --- */
 @media screen and (max-width: 1024px) {
-  .hero-content h2 { font-size: 3.5rem; }
+  .hero-content h2 {
+    font-size: 3.5rem;
+  }
+
   .categories-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -480,35 +490,55 @@
   :root {
     --nav-height: var(--nav-height-mobile);
   }
-  
+
   .nav-menu-btn {
     display: block;
   }
-  
-  .nav-logo .logo-img { max-height: 40px; }
-  .nav-logo h1 { font-size: 1.1rem; }
-  
-  .nav-links {
-    display: none; /* Hide on mobile, use a toggle menu in real scenarios */
+
+  .nav-logo .logo-img {
+    max-height: 40px;
   }
-  
+
+  .nav-logo h1 {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    white-space: normal;
+    line-height: 1.1;
+    max-width: 140px;
+  }
+
+  .nav-actions {
+    gap: 0.8rem;
+  }
+
+  .nav-links {
+    display: none;
+    /* Hide on mobile, use a toggle menu in real scenarios */
+  }
+
   .hero {
     height: 80vh;
     min-height: 500px;
   }
-  
-  .hero-content h2 { font-size: 2.8rem; }
-  .hero-content p { font-size: 1rem; }
-  
+
+  .hero-content h2 {
+    font-size: 2.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
   .categories-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .footer-content {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .product-action-btn {
     transform: translateY(0);
     position: relative;
@@ -522,7 +552,7 @@
     margin-left: 5%;
     margin-bottom: 1rem;
   }
-  
+
   .product-card:hover .product-action-btn {
     background: var(--color-black);
     color: var(--color-white);
@@ -530,26 +560,40 @@
 }
 
 @media screen and (max-width: 480px) {
-  .nav-logo .logo-img { max-height: 35px; }
-  .nav-logo h1 { font-size: 0.9rem; }
-  
+  .nav-logo {
+    gap: 8px;
+  }
+
+  .nav-logo .logo-img {
+    max-height: 32px;
+  }
+
+  .nav-logo h1 {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: normal;
+    line-height: 1.1;
+    max-width: 110px;
+  }
+
   .hero-content h2 {
     font-size: 2.2rem;
   }
-  
+
   .products-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 1rem;
   }
-  
+
   .product-title {
     font-size: 0.85rem;
   }
-  
+
   .product-price {
     font-size: 0.95rem;
   }
-  
+
   .product-info {
     padding: 1rem 0.5rem;
   }
