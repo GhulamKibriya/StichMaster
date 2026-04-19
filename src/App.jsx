@@ -103,8 +103,16 @@ const categories = [
   }
 ];
 
+const heroImages = [
+  "/HEADER_01.png",
+  "/HEADER_02.png",
+  "/HEADER_03.png",
+  "/HEADER_04.png"
+];
+
 function App() {
   const [scrolled, setScrolled] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -116,7 +124,15 @@ function App() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    const slideInterval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % heroImages.length);
+    }, 3500);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearInterval(slideInterval);
+    };
   }, []);
 
   return (
@@ -150,18 +166,29 @@ function App() {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section className="hero">
-        <img
-          src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=2000&auto=format&fit=crop"
-          alt="Streetwear Banner"
-          className="hero-img"
-        />
-        <div className="hero-overlay"></div>
-        <div className="hero-content">
-          <h2>Premium Export Leftovers</h2>
-          <p>Authentic big brand quality. Unbeatable prices. Upgrade your wardrobe with our latest drops.</p>
-          <a href="#power-drop" className="btn-primary">Shop The Drop</a>
+        <a href="#power-drop" className="hero-link">
+          {heroImages.map((src, index) => (
+            <img
+              key={src}
+              src={src}
+              alt={`Streetwear Banner ${index + 1}`}
+              className={`hero-img ${index === currentSlide ? 'active' : ''}`}
+            />
+          ))}
+        </a>
+        <div className="hero-dots">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              className={`dot ${index === currentSlide ? 'active' : ''}`}
+              onClick={(e) => {
+                e.preventDefault();
+                setCurrentSlide(index);
+              }}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </section>
 

@@ -96,13 +96,17 @@
 /* --- Hero Section --- */
 .hero {
   position: relative;
-  height: 90vh;
-  min-height: 600px;
   margin-top: var(--nav-height);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  height: auto;
   overflow: hidden;
+  background-color: var(--color-bg);
+}
+
+.hero-link {
+  position: relative;
+  display: block;
+  width: 100%;
 }
 
 .hero-img {
@@ -112,21 +116,64 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   z-index: 1;
+  opacity: 0;
+  transition: opacity 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 100%);
+.hero-img:first-child {
+  position: relative;
+  height: auto;
+  object-fit: unset;
+}
+
+.hero-img.active {
+  opacity: 1;
   z-index: 2;
 }
 
+.hero-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.hero-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all var(--transition);
+  padding: 0;
+}
+
+.hero-dots .dot.active {
+  background-color: var(--color-white);
+  transform: scale(1.2);
+  border-color: var(--color-black);
+}
+
+.hero-overlay {
+  grid-row: 1;
+  grid-column: 1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
 .hero-content {
-  position: relative;
+  grid-row: 1;
+  grid-column: 1;
+  place-self: center;
   z-index: 3;
   text-align: center;
   color: var(--color-white);
@@ -518,8 +565,7 @@
   }
 
   .hero {
-    height: 80vh;
-    min-height: 500px;
+    height: auto;
   }
 
   .hero-content h2 {
