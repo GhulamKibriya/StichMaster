@@ -33,11 +33,25 @@
   color: var(--color-text-main);
 }
 
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-logo .logo-img {
+  max-height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
 .nav-logo h1 {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 800;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
   text-transform: uppercase;
+  white-space: nowrap;
+  margin: 0;
 }
 
 .nav-links {
@@ -471,6 +485,9 @@
     display: block;
   }
   
+  .nav-logo .logo-img { max-height: 40px; }
+  .nav-logo h1 { font-size: 1.1rem; }
+  
   .nav-links {
     display: none; /* Hide on mobile, use a toggle menu in real scenarios */
   }
@@ -513,6 +530,9 @@
 }
 
 @media screen and (max-width: 480px) {
+  .nav-logo .logo-img { max-height: 35px; }
+  .nav-logo h1 { font-size: 0.9rem; }
+  
   .hero-content h2 {
     font-size: 2.2rem;
   }

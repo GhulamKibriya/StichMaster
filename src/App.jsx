@@ -128,9 +128,10 @@ function App() {
             <button className="nav-menu-btn">
               <MenuIcon />
             </button>
-            
+
             <div className="nav-logo">
-              <h1>Exportify</h1>
+              <img src="/LOGO.jpeg" alt="Stitch Master Pro Industries Logo" className="logo-img" />
+              <h1>Stitch Master Pro Industries</h1>
             </div>
 
             <div className="nav-links">
@@ -151,10 +152,10 @@ function App() {
 
       {/* Hero Section */}
       <section className="hero">
-        <img 
-          src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=2000&auto=format&fit=crop" 
-          alt="Streetwear Banner" 
-          className="hero-img" 
+        <img
+          src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=2000&auto=format&fit=crop"
+          alt="Streetwear Banner"
+          className="hero-img"
         />
         <div className="hero-overlay"></div>
         <div className="hero-content">
@@ -171,7 +172,7 @@ function App() {
             <h3>Power Drop</h3>
             <div className="underline"></div>
           </div>
-          
+
           <div className="products-grid">
             {products.map(product => (
               <div className="product-card" key={product.id}>
@@ -203,7 +204,7 @@ function App() {
             <h3>Shop by Category</h3>
             <div className="underline"></div>
           </div>
-          
+
           <div className="categories-grid">
             {categories.map(category => (
               <div className="category-card" key={category.id}>
@@ -230,14 +231,14 @@ function App() {
         <div className="container">
           <div className="footer-content">
             <div className="footer-col">
-              <h5>Exportify.pk</h5>
-              <p>Welcome to Exportify.pk, your go-to for high-quality export leftover clothing from big brands. Find authentic apparel at unbeatable prices.</p>
+              <h5>Stitch Master Pro Industries</h5>
+              <p>Welcome to Stitch Master Pro Industries, your go-to for high-quality export leftover clothing from big brands. Find authentic apparel at unbeatable prices.</p>
               <form className="newsletter-form">
                 <input type="email" placeholder="Enter your email" aria-label="Email address" />
                 <button type="submit">Subscribe</button>
               </form>
             </div>
-            
+
             <div className="footer-col">
               <h5>Quick Links</h5>
               <div className="footer-links">
@@ -247,22 +248,30 @@ function App() {
                 <a href="#faqs">FAQs</a>
               </div>
             </div>
-            
+
             <div className="footer-col">
               <h5>Contact Us</h5>
               <div className="footer-links">
-                <p>WhatsApp: 0319-8378147</p>
-                <p>Email: shopexportify@gmail.com</p>
-                <p>Hours: 12:00 PM till 6:00 PM</p>
-                <p>(Sunday off)</p>
+                <p>WhatsApp: +923128138270</p>
+                <p>Email: stitchmasterpro@gmail.com</p>
+                <p>Hours: 24/7</p>
+                <p>Sunday: Open</p>
+                <a href="https://www.instagram.com/stitchmasterpro?igsh=amI5cGlqNXQ4NzV1" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                  Follow us on Instagram
+                </a>
               </div>
             </div>
           </div>
-          
+
           <div className="footer-bottom">
-            <p>&copy; {new Date().getFullYear()} Exportify.pk. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Stitch Master Pro Industries. All rights reserved.</p>
             <div className="social-links">
-              <a href="#instagram" aria-label="Instagram">
+              <a href="https://www.instagram.com/stitchmasterpro?igsh=amI5cGlqNXQ4NzV1" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
